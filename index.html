@@ -1,33 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
     <title>Trivia Game</title>
+    <div id = "user-state">
+        <h3>____ questions correct</h3>
+        <h3>questions left</h3>
+    </div>
     <div class="hero-image">
         <div class="hero-text">
-          <h1>Trivia Game</h1>
-          <p>Test your knowledge</p>
+            <h1>National Parks Trivia Game</h1>
         </div>
-      </div>
-//quiz container//
-    <h1> Question 1 </h1>
-    <div class = "button-group">
-        <input type="radio" class = "big" value="A" name="choice">
-        <input type="radio" class = "big" value="B" name="choice" checked>
-        <input type="radio" class = "big" value="C" name="choice">
-        <input type="radio" class = "big" value="D" name="choice">
+        <img src = "images/shenandoah.jpeg">
+        <p><button type=input> Test your knowledge! </button></p>
+
+        <h1> Question 1 </h1>
+        <div class="button-group">
+            <input type="radio" class="big" value="A" name="choice">
+            <input type="radio" class="big" value="B" name="choice" checked>
+            <input type="radio" class="big" value="C" name="choice">
+            <input type="radio" class="big" value="D" name="choice">
+        </div>
+        //timer container//
     </div>
-//score container// 
-<div class = "countdown">
-    <p class = "timer"> Timer
-        <span id = "seconds"></span>
-    </p>
-</div>
+    <div id="timeRemaining" class="countdown">
+        <p class="timer"> Timer
+            <span id="seconds"></span>
+        </p>
+    </div>
 </head>
+
 <body>
-<script src = "script.js"></script>   
+    <script src="script.js"></script>
 </body>
+
 </html>
