@@ -12,15 +12,20 @@
           <p>Test your knowledge</p>
         </div>
       </div>
+//quiz container//
     <h1> Question 1 </h1>
-    <div class = "controls">
-        <form id = "form"> 
-            <button id ="choose answer A">A</button>
-            <button id = "choose answer B">B</button>
-            <button id = "choose answer C">C</button>
-            <button id = "chooose answer D">D</button>
-        </form>
+    <div class = "button-group">
+        <input type="radio" class = "big" value="A" name="choice">
+        <input type="radio" class = "big" value="B" name="choice" checked>
+        <input type="radio" class = "big" value="C" name="choice">
+        <input type="radio" class = "big" value="D" name="choice">
     </div>
+//score container// 
+<div class = "countdown">
+    <p class = "timer"> Timer
+        <span id = "seconds"></span>
+    </p>
+</div>
 </head>
 <body>
 <script src = "script.js"></script>   

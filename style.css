@@ -1,7 +1,18 @@
 body {
     text-align: center; 
 }
-.button {
+.button-group input {
+    display: block; 
+    align-items: center; 
+    width: 100%
+    
+}
+.big {
+    width: 10em; 
+    height: 10em;
+}
+.buttons {
     align-items: center;
+    size: 
 }
 
