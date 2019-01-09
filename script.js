@@ -42,6 +42,7 @@ let questions = [{
     },
 
 ]
+console.log(questions[0].question)
 // function nextQuestion() {
 //     let 
 // }
