@@ -19,17 +19,20 @@ body {
     transform: translate(-50%, -50%);
     color: white;
   } */
-.button-group input {
+.button-group {
     display: none; 
     text-align: center; 
     width: 500px;
     padding: 20px; 
     border-radius: 28px;
-    
+}
+
+.block {
+    display: block;
 }
 
 /* this is the next button, consider changing name */
 .button-group button {
-    display: none; 
+    display: block; 
     width: 150px; 
 }

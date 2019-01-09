@@ -1,20 +1,5 @@
 //method to show/hide relevant question data (want questions to appear on browser one at a time)
 //click on "Test Your Knowledge" Button
-//print Question[0,0] (first question)
-//print Choices[0,1] (first choices)
-//Click Choice (store User Choice, Check if Correct)
-//Click "thank you, next" Button 
-//print Question[1] (second question), second choices...go through 10 questions and choices
-function toggleButton() {
-    //get the next button
-    let nextButton = document.getElementById('next')
-} 
-
-//--> track score (how many user answers are correct)
-//--> how many questions left 
-
-//--> reset and show next question after select next button  and/or after 30 seconds is up
-
 let questions = [
     {   question: "What is the newest national park?",
         choices: ["Congaree", "Big Bend", "Mount Rainier", "Great Sand Dunes"],
@@ -67,12 +52,44 @@ let questions = [
     }
 
 ]
-console.log(questions[0].question)
+// console.log(questions[0].question)
+const playButton = document.querySelector('button')
+// let test = document.getElementById('game')
+const buttonGroup = document.querySelector('.button-group')
+
+playButton.addEventListener('click', function() {
+    playButton.innerHTML = questions[0].question
+    buttonGroup.classList.add('block')
+
+    
+})
+querySelectorAll 
+// console.log(button)
+// for (let i = 0; i < questions.length; i++){
+    
+
+// button.addEventListener('click', function () {
+//   print question and choices 
+// })
+//print Question[0,0] (first question)
+//print Choices[0,1] (first choices)
+//Click Choice (store User Choice, Check if Correct)
+//Click "thank you, next" Button 
+//print Question[1] (second question), second choices...go through 10 questions and choices
+// function toggleButton() {
+//     //get the next button
+//     let nextButton = document.getElementById('next')
+// } 
+
+//--> track score (how many user answers are correct)
+//--> how many questions left 
+
+//--> reset and show next question after select next button  and/or after 30 seconds is up
+
+
 
 // const choice = document.getElementById('choice1')
-let newDiv = document.createElement("div")
-let newParagraph = document.createTextNode("Test");
-newDiv.appendChild(newParagraph)
+
 // function nextQuestion() {
 //     let 
 // }
@@ -80,12 +97,7 @@ newDiv.appendChild(newParagraph)
 
 // }
 
-const button = document.querySelector('button')
-console.log(button)
 
-button.addEventListener('click', function () {
-  alert("You clicked a button!")
-})
 
 // let answers
 // let results
