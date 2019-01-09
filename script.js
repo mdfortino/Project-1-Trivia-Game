@@ -1,19 +1,22 @@
 //method to show/hide relevant question data (want questions to appear on browser one at a time)
-//--> use innerHTML? append/prepend...
+//click on "Test Your Knowledge" Button
+//print Question[0,0] (first question)
+//print Choices[0,1] (first choices)
+//Click Choice (store User Choice, Check if Correct)
+//Click "thank you, next" Button 
+//print Question[1] (second question), second choices...go through 10 questions and choices
+function toggleButton() {
+    //get the next button
+    let nextButton = document.getElementById('next')
+} 
 
-//method to keep track of user state: 
-//--> store user answer
-//--> check if correct
 //--> track score (how many user answers are correct)
 //--> how many questions left 
 
 //--> reset and show next question after select next button  and/or after 30 seconds is up
 
-
-// let currentQuestion
-// let correctAnswers 
-let questions = [{
-        question: "What is the newest national park?",
+let questions = [
+    {   question: "What is the newest national park?",
         choices: ["Congaree", "Big Bend", "Mount Rainier", "Great Sand Dunes"],
         correctAnswer: [3]
     },
@@ -34,15 +37,42 @@ let questions = [{
     }, 
     {
         question: "What national park is home to the longest cave system in the world?",
-        choices: ["Mammoth Cave National Park", "", ],
+        choices: ["Mammoth Cave National Park", "Canyonelands National Park", "Carlsbad Caverns National Park", "Great Basin Park" ],
         correctAnswer: [0]
     },
     {
-
+        question: "What state contains the most national parks?",
+        choices: ["Colorado", "Utah", "Alaska", "California"],
+        correctAnswer: [3]
     },
+    {
+        question: "Through how many states does the Appalachian National Scenic Trail pass?",
+        choices: ["10", "14", "9", "12"],
+        correctAnswer: [1]
+    },
+    {
+        question: "Which of the following is not one of Utah's 'Mighty 5' National Parks?",
+        choices: ["Arches", "Capitol Reef", "Bryce Canyon", "Badlands"],
+        correctAnswer: [3]
+    },
+    {
+        question: "What national park is home to the deepest lake in the U.S.?",
+        choices: ["Lake Clark National Park", "Kenai Fjords National Park", "Crater Lake National Park", "Great Basin National Park"],
+        correctAnswer: [2]
+    },
+    {   
+        question: " What is the smallest national park?",
+        choices: ["Virgin Islands National Park", "Hot Spring National Park", "Cuyahoga Valley National Park", "Mesa Verde National Park"],
+        correctAnswer: [1]
+    }
 
 ]
 console.log(questions[0].question)
+
+// const choice = document.getElementById('choice1')
+let newDiv = document.createElement("div")
+let newParagraph = document.createTextNode("Test");
+newDiv.appendChild(newParagraph)
 // function nextQuestion() {
 //     let 
 // }

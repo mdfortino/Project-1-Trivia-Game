@@ -13,25 +13,30 @@
     </div>
     <!-- <div class="hero-image">
         <div class="hero-text"> -->
+        <div> 
             <h1>National Parks Trivia Game</h1>
             <img src = "images/shenandoah.jpeg"> 
-            <p><button class = "play" type=input> Test your knowledge! </button></p>
+            <p><button onclick = "toggleButton()" id= "play"> Test your knowledge! </button></p> 
         </div>
-    
         <!-- <h2> Question 1 </h2> -->
+        <div id = "game">
         <div class="button-group">
-            <input class = "button" name="choice1">
-            <input class = "button" name="choice2" checked>
-            <input class = "button" name="choice3">
-            <input class = "button" name="choice4">
+            <input type = "button" id="choice1">
+            <input type = "button" id="choice2" checked>
+            <input type = "button" id="choice3">
+            <input type = "button" id="choice4">
+            <!-- access onClick using JS: -->
+            <button onclick = "toggleButton()" id= "next"> thank you, next </button>
         </div>
-        //timer container//
     </div>
+
+    <div class = "timer">
     <div id="timeRemaining" class="countdown">
         <p class="timer"> Timer
             <span id="seconds"></span>
         </p>
     </div>
+</div>
 </head>
 
 <body>

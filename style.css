@@ -20,7 +20,7 @@ body {
     color: white;
   } */
 .button-group input {
-    display: block; 
+    display: none; 
     text-align: center; 
     width: 500px;
     padding: 20px; 
@@ -28,7 +28,8 @@ body {
     
 }
 
-#play {
-    display: block; 
+/* this is the next button, consider changing name */
+.button-group button {
+    display: none; 
     width: 150px; 
 }
