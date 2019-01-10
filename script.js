@@ -107,7 +107,7 @@ const saveAnswer = (evt) => {
     const answeredQuestion = Object.assign({ selectedAnswer: selectedAnswer }, currentQuestion)
     answeredQuestions.push(answeredQuestion);
     currentQuestion = null;
-    displayNextQuestion();
+    getNextQuestion();
   }
   //Display Next Question: 
   const displayNextQuestion = () => {
@@ -129,33 +129,35 @@ const startGame = () => {
     playButton.addEventListener('click', saveAnswer);
     displayNextQuestion();
 }
-set0.addEventListener('click', function(){
-    const set0 = document.querySelector('#choice0') 
-});
-set1.addEventListener('click', function(){
-    const set1 = document.querySelector('#choice1')
-});
-set2.addEventListener('click', function(){
-    const set2 = document.querySelector('#choice2')
-});
-set3.addEventListener('click', function(){
-    const set3 = document.querySelector('#choice3')
-});
-
-
 
 playButton.addEventListener('click', function() {
+    const set0 = document.querySelector('#choice0')
+    const set1 = document.querySelector('#choice1')
+    const set2 = document.querySelector('#choice2')
+    const set3 = document.querySelector('#choice3')
     const selections = [set0, set1, set2, set3]
     selections.forEach(function(choice, index) {
         choice.innerHTML = questions[currentIndex].choices[index]
         choice.addEventListener('click', function(){
             if(questions[currentIndex].correctAnswer === questions[currentIndex].choices[index]) {
                 console.log(true)
+    set0.addEventListener('click', function() {
+    qu
+    })
+    set1.addEventListener('click', function() {
+
+    
+    })
+    set2.addEventListener('click', function(){
+
+    })
+    set3.addEventListener('click', function(){
+
+    })
             }
                 
         })
     })
-
 
 
     
