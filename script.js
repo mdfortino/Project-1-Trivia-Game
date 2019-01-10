@@ -1,6 +1,7 @@
 //method to show/hide relevant question data (want questions to appear on browser one at a time)
 let total = 10;
-let score = 0;
+let userState = 0;
+// let score = 0;
 let questions = [
     {   question: "What is the newest national park?",
         choices: ["Congaree", "Big Bend", "Mount Rainier", "Great Sand Dunes"],
@@ -54,7 +55,15 @@ let questions = [
 ]
 const playButton = document.querySelector('button')
 const buttonGroup = document.querySelector('.button-group')
-//Start Game - display question and choices
+let score = document.querySelector("h2")
+console.log(score)
+//Start Game - display first question and choices
+function renderQuestion(){
+    let game = document.querySelector("game");
+    if(userState >= questions.length) {
+    game.innerHTML = "Score: "    
+    }
+}
 playButton.addEventListener('click', function() {
     const set0 = document.querySelector('#choice0')
     const set1 = document.querySelector('#choice1')
@@ -68,6 +77,10 @@ playButton.addEventListener('click', function() {
     buttonGroup.classList.add('block')
 })
 
+//validation
+// for (var i = 0; i <= questions.length; i++) {
+//     if(questions[i]===null )
+// }
 // const answers = document.getElementById('answers')
 // console.log(answers.dataset)
 
@@ -82,11 +95,12 @@ playButton.addEventListener('click', function() {
 //     console.log(checkSelection)
 // })
 
-for(i=0; i< questions.length; i++){
-    if(questions[i] === correctAnswers[i]) {
-       score = score +1; 
-    }
-}
+// for(i=0; i< questions.length; i++){
+//     if(questions[i] === correctAnswers[i]) {
+//       question =  
+//     }
+//     if(choice == questions[])
+// }
 
 
 
