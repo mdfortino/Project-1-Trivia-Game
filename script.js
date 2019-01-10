@@ -81,8 +81,10 @@ const choiceButtonGroup = document.querySelector('.button-group')
 let score = document.querySelector("h2")
 
 //GAME METHODS 
+//End Game: 
 const endGame = () => {
     answeredQuestions.forEach((question) => {
+        //add to total score
         if(question.selectedAnswer === question.correctAnswer)
             totalScore++;
     });
@@ -91,7 +93,34 @@ const endGame = () => {
     choiceButtonGroup.removeEventListener("Click", saveAnswer);
     choiceButtonGroup.style.display = "none";
 }; 
-    
+// MDN Example: 
+// function myFunction(event) { 
+//     var x = event.target;
+//     document.getElementById("demo").innerHTML = "Triggered by a " + x.tagName + " element";
+//   }
+
+//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
+//Object.assign() copies values of own properties from one or more source objects to target object
+//Store Answer:
+const saveAnswer = (evt) => {
+    const selectedAnswer = evt.target.value;
+    const answeredQuestion = Object.assign({ selectedAnswer: selectedAnswer }, currentQuestion)
+    answeredQuestions.push(answeredQuestion);
+    currentQuestion = null;
+    getNextQuestion();
+  }
+  //Display Next Question: 
+  const displayNextQuestion = () => {
+      if(currentIndex == questions.length){
+          return endGame();
+      }
+  }
+  currentQuestion = question[currentIndex]; 
+
+//The map() method creates a new array with the results of calling a provided function on every element in the calling array
+//
+
+
 //     playButton.addEventListener('click', function() {
 //     const set0 = document.querySelector('#choice0')
 //     const set1 = document.querySelector('#choice1')
@@ -104,7 +133,6 @@ const endGame = () => {
 //     playButton.innerHTML = questions[0].question
 //     buttonGroup.classList.add('block')
 // })
-//check answers after game is over scenario: 
 
 
 //validation
