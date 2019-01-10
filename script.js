@@ -7,97 +7,106 @@
 //For every Question, Display: how many Questions Left, how much Time Remaining, and how many Correct 
 //Once Last Question is Answered, Display "Thanks for Playing" with image and option to reset game 
 
-let total = 10;
-let totalCorrectAnswers = [];
-let userState = 0;
-let userInput = [];
-// let score = 0;
-let questions = [
-    {   question: "What is the newest national park?",
+//GAME STATE: 
+let totalScore = 0;
+let currentQuestion = null;
+let currentIndex = 0;
+let answeredQuestions = [];
+
+const questions = [
+    {   id: 0,
+        question: "What is the newest national park?",
         choices: ["Congaree", "Big Bend", "Mount Rainier", "Great Sand Dunes"],
-        correctAnswer: [3]
+        correctAnswer: "Great Sand Dunes"
     },
     {
+        id: 1,
         question: "What is the most visited park in the National Park System?",
         choices: ["Acadia", "Grand Canyon", "Great Smoky Mountains", "Yellowstone"],
-        correctAnswer: [2]
+        correctAnswer: "Great Smoky Mountains"
     },
     {
+        id: 2,
         question: "Which of the following exists within the boundaries of a national park?",
         choices: ["The highest point in North America", "The longest cave system in the world", "The deepest lake in the U.S.", "All of the above" ],
-        correctAnswer: [3]
+        correctAnswer: "All of the above"
     },
     {
+        id: 3,
         question: "What national park is home to the world's largest tree?",
         choices: ["Redwood National Park", "Sequoia National Park", "Everglades National Park", "Joshua Tree National Park"],
-        correctAnswer: [2]
+        correctAnswer: "Everglades National Park"
     }, 
     {
+        id: 4,
         question: "What national park is home to the longest cave system in the world?",
         choices: ["Mammoth Cave National Park", "Canyonelands National Park", "Carlsbad Caverns National Park", "Great Basin Park" ],
-        correctAnswer: [0]
+        correctAnswer: "Mammoth Cave National Park"
     },
     {
+        id: 5,
         question: "What state contains the most national parks?",
         choices: ["Colorado", "Utah", "Alaska", "California"],
-        correctAnswer: [3]
+        correctAnswer: "California"
     },
     {
+        id: 6, 
         question: "Through how many states does the Appalachian National Scenic Trail pass?",
         choices: ["10", "14", "9", "12"],
-        correctAnswer: [1]
+        correctAnswer: "14"
     },
     {
+        id: 7,
         question: "Which of the following is not one of Utah's 'Mighty 5' National Parks?",
         choices: ["Arches", "Capitol Reef", "Bryce Canyon", "Badlands"],
-        correctAnswer: [3]
+        correctAnswer: "Badlands"
     },
     {
+        id: 8,
         question: "What national park is home to the deepest lake in the U.S.?",
         choices: ["Lake Clark National Park", "Kenai Fjords National Park", "Crater Lake National Park", "Great Basin National Park"],
-        correctAnswer: [2]
+        correctAnswer: "Crater Lake National Park"
     },
     {   
+        id: 9,
         question: " What is the smallest national park?",
-        choices: ["Virgin Islands National Park", "Hot Spring National Park", "Cuyahoga Valley National Park", "Mesa Verde National Park"],
-        correctAnswer: [1]
+        choices: ["Virgin Islands National Park", "Hot Springs National Park", "Cuyahoga Valley National Park", "Mesa Verde National Park"],
+        correctAnswer: ["Hot Springs National Park"]
     }
 ]
-//method to show/hide relevant question data (want questions to appear on browser one at a time)
 
-
-//Tally correct answers
-for(i=0; i<questions.length; i++) {
-    if (userInput === questions.correctAnswer) {
-totalCorrectAnswers.push(userInput[i])
-}
-
-}
-
-
+//GAME ELEMENTS  
 const playButton = document.querySelector('button')
-const buttonGroup = document.querySelector('.button-group')
+const choiceButtonGroup = document.querySelector('.button-group')
 let score = document.querySelector("h2")
-//Start Game - display first question and choices
-playButton.addEventListener('click', function() {
-    const set0 = document.querySelector('#choice0')
-    const set1 = document.querySelector('#choice1')
-    const set2 = document.querySelector('#choice2')
-    const set3 = document.querySelector('#choice3')
-    set0.innerHTML = questions[0].choices[0]
-    set1.innerHTML = questions[0].choices[1]
-    set2.innerHTML = questions[0].choices[2]
-    set3.innerHTML = questions[0].choices[3]
-    playButton.innerHTML = questions[0].question
-    buttonGroup.classList.add('block')
-})
+
+//GAME METHODS 
+const endGame = () => {
+    answeredQuestions.forEach((question) => {
+        if(question.selectedAnswer === question.correctAnswer)
+            totalScore++;
+    });
+    alert(`Thanks for playing! Here is your score: ${totalScore}`)
+    playButton.removeEventListener("Click", startGame);
+    choiceButtonGroup.removeEventListener("Click", saveAnswer);
+    choiceButtonGroup.style.display = "none";
+}; 
+    
+//     playButton.addEventListener('click', function() {
+//     const set0 = document.querySelector('#choice0')
+//     const set1 = document.querySelector('#choice1')
+//     const set2 = document.querySelector('#choice2')
+//     const set3 = document.querySelector('#choice3')
+//     set0.innerHTML = questions[0].choices[0]
+//     set1.innerHTML = questions[0].choices[1]
+//     set2.innerHTML = questions[0].choices[2]
+//     set3.innerHTML = questions[0].choices[3]
+//     playButton.innerHTML = questions[0].question
+//     buttonGroup.classList.add('block')
+// })
 //check answers after game is over scenario: 
-function renderQuestion(){
-    let game = document.querySelector("game");
-    if(userState >= questions.length) {
-    game.innerHTML = "Score: " 
-    } 
-}
+
+
 //validation
 // for (var i = 0; i <= questions.length; i++) {
 //     if(questions[i]===null )
