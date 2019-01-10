@@ -115,13 +115,21 @@ const saveAnswer = (evt) => {
           return endGame();
       }
   }
-  currentQuestion = question[currentIndex]; 
+  currentQuestion = questions[currentIndex]; 
 
 //The map() method creates a new array with the results of calling a provided function on every element in the calling array
-//
+//want array of current question and answer choices to display one after another: 
+currentQuestion current choice
+// document.querySelector('id="choice0")
+//ex: const map1 = array1.map(x => x * 2);
 
-
-//     playButton.addEventListener('click', function() {
+const startGame = () => {
+choiceButtonGroup.classList.add('block');
+playButton.addEventListener('click', saveAnswer);
+displayNextQuestion();
+}
+playButton.addEventListener('click', startGame)
+console.log(totalScore)
 //     const set0 = document.querySelector('#choice0')
 //     const set1 = document.querySelector('#choice1')
 //     const set2 = document.querySelector('#choice2')
