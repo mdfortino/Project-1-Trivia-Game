@@ -31,8 +31,4 @@ body {
     display: block;
 }
 
-/* this is the next button, consider changing name */
-.button-group button {
-    display: block; 
-    width: 150px; 
-}
+

@@ -1,5 +1,6 @@
 //method to show/hide relevant question data (want questions to appear on browser one at a time)
-//click on "Test Your Knowledge" Button
+let total = 10;
+let score = 0;
 let questions = [
     {   question: "What is the newest national park?",
         choices: ["Congaree", "Big Bend", "Mount Rainier", "Great Sand Dunes"],
@@ -50,22 +51,48 @@ let questions = [
         choices: ["Virgin Islands National Park", "Hot Spring National Park", "Cuyahoga Valley National Park", "Mesa Verde National Park"],
         correctAnswer: [1]
     }
-
 ]
-// console.log(questions[0].question)
 const playButton = document.querySelector('button')
-// let test = document.getElementById('game')
 const buttonGroup = document.querySelector('.button-group')
-
+//Start Game - display question and choices
 playButton.addEventListener('click', function() {
+    const set0 = document.querySelector('#choice0')
+    const set1 = document.querySelector('#choice1')
+    const set2 = document.querySelector('#choice2')
+    const set3 = document.querySelector('#choice3')
+    set0.innerHTML = questions[0].choices[0]
+    set1.innerHTML = questions[0].choices[1]
+    set2.innerHTML = questions[0].choices[2]
+    set3.innerHTML = questions[0].choices[3]
     playButton.innerHTML = questions[0].question
     buttonGroup.classList.add('block')
-
-    
 })
-querySelectorAll 
-// console.log(button)
-// for (let i = 0; i < questions.length; i++){
+
+// const answers = document.getElementById('answers')
+// console.log(answers.dataset)
+
+// document.body.addEventListener('click', evt => {
+//     if (event.target.nodeName === "choice3") {
+//     console.log("Clicked correct", event.target.textContent);
+//     }
+// });
+// set buttonGroup setAttribute to ('data-index',answer)
+// buttonGroup.addEventListener('click',function(event){
+//     const checkSelection = event.target.dataset.index
+//     console.log(checkSelection)
+// })
+
+for(i=0; i< questions.length; i++){
+    if(questions[i] === correctAnswers[i]) {
+       score = score +1; 
+    }
+}
+
+
+
+
+
+
     
 
 // button.addEventListener('click', function () {
@@ -103,7 +130,7 @@ querySelectorAll
 // let results
 
 
-//method to countdown: setInterval()
+//method to countdown: setInterval(countdown, 1000)
 //method to track and display time remaining: getTime(), Math.floor
 // let seconds
 // let countdownTimer = setInterval(createTimer,1000)
