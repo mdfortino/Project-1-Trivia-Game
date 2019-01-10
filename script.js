@@ -1,6 +1,16 @@
-//method to show/hide relevant question data (want questions to appear on browser one at a time)
+//Game starts when user clicks "test your knowledge" button
+//First Question and Choices Appear
+//User clicks 1 Choice (cannot click more than 1 Choice) 
+//store User Choice, Check if Correct
+//Next question appears after User clicks Correct Answer and/or if Timer of 30 seconds is up
+//If User clicks Wrong Answer, alert "Wrong" with correct answer/fact blurb pop-up
+//For every Question, Display: how many Questions Left, how much Time Remaining, and how many Correct 
+//Once Last Question is Answered, Display "Thanks for Playing" with image and option to reset game 
+
 let total = 10;
+let totalCorrectAnswers = [];
 let userState = 0;
+let userInput = [];
 // let score = 0;
 let questions = [
     {   question: "What is the newest national park?",
@@ -53,17 +63,22 @@ let questions = [
         correctAnswer: [1]
     }
 ]
+//method to show/hide relevant question data (want questions to appear on browser one at a time)
+
+
+//Tally correct answers
+for(i=0; i<questions.length; i++) {
+    if (userInput === questions.correctAnswer) {
+totalCorrectAnswers.push(userInput[i])
+}
+
+}
+
+
 const playButton = document.querySelector('button')
 const buttonGroup = document.querySelector('.button-group')
 let score = document.querySelector("h2")
-console.log(score)
 //Start Game - display first question and choices
-function renderQuestion(){
-    let game = document.querySelector("game");
-    if(userState >= questions.length) {
-    game.innerHTML = "Score: "    
-    }
-}
 playButton.addEventListener('click', function() {
     const set0 = document.querySelector('#choice0')
     const set1 = document.querySelector('#choice1')
@@ -76,7 +91,13 @@ playButton.addEventListener('click', function() {
     playButton.innerHTML = questions[0].question
     buttonGroup.classList.add('block')
 })
-
+//check answers after game is over scenario: 
+function renderQuestion(){
+    let game = document.querySelector("game");
+    if(userState >= questions.length) {
+    game.innerHTML = "Score: " 
+    } 
+}
 //validation
 // for (var i = 0; i <= questions.length; i++) {
 //     if(questions[i]===null )
@@ -102,51 +123,8 @@ playButton.addEventListener('click', function() {
 //     if(choice == questions[])
 // }
 
-
-
-
-
-
-    
-
-// button.addEventListener('click', function () {
-//   print question and choices 
-// })
-//print Question[0,0] (first question)
-//print Choices[0,1] (first choices)
-//Click Choice (store User Choice, Check if Correct)
-//Click "thank you, next" Button 
-//print Question[1] (second question), second choices...go through 10 questions and choices
-// function toggleButton() {
-//     //get the next button
-//     let nextButton = document.getElementById('next')
-// } 
-
-//--> track score (how many user answers are correct)
-//--> how many questions left 
-
-//--> reset and show next question after select next button  and/or after 30 seconds is up
-
-
-
-// const choice = document.getElementById('choice1')
-
-// function nextQuestion() {
-//     let 
-// }
-// for (i = 0; i < questions.length; i++){
-
-// }
-
-
-
-// let answers
-// let results
-
-
+//Timer Function: 
 //method to countdown: setInterval(countdown, 1000)
 //method to track and display time remaining: getTime(), Math.floor
 // let seconds
 // let countdownTimer = setInterval(createTimer,1000)
-// //will need events for answer buttons: 
-// let button = document.querySelector('button')
