@@ -107,7 +107,7 @@ const saveAnswer = (evt) => {
     const answeredQuestion = Object.assign({ selectedAnswer: selectedAnswer }, currentQuestion)
     answeredQuestions.push(answeredQuestion);
     currentQuestion = null;
-    getNextQuestion();
+    displayNextQuestion();
   }
   //Display Next Question: 
   const displayNextQuestion = () => {
@@ -115,32 +115,54 @@ const saveAnswer = (evt) => {
           return endGame();
       }
   }
-  currentQuestion = questions[currentIndex]; 
+//   currentQuestion = questions[currentIndex]; 
 
+//   currentQuestion.choices.map((choice, index) =>
 //The map() method creates a new array with the results of calling a provided function on every element in the calling array
 //want array of current question and answer choices to display one after another: 
-currentQuestion current choice
+// currentQuestion current choice
 // document.querySelector('id="choice0")
 //ex: const map1 = array1.map(x => x * 2);
 
 const startGame = () => {
-choiceButtonGroup.classList.add('block');
-playButton.addEventListener('click', saveAnswer);
-displayNextQuestion();
+    choiceButtonGroup.classList.add('block');
+    playButton.addEventListener('click', saveAnswer);
+    displayNextQuestion();
 }
-playButton.addEventListener('click', startGame)
-console.log(totalScore)
-//     const set0 = document.querySelector('#choice0')
-//     const set1 = document.querySelector('#choice1')
-//     const set2 = document.querySelector('#choice2')
-//     const set3 = document.querySelector('#choice3')
-//     set0.innerHTML = questions[0].choices[0]
-//     set1.innerHTML = questions[0].choices[1]
-//     set2.innerHTML = questions[0].choices[2]
-//     set3.innerHTML = questions[0].choices[3]
-//     playButton.innerHTML = questions[0].question
-//     buttonGroup.classList.add('block')
-// })
+set0.addEventListener('click', function(){
+    const set0 = document.querySelector('#choice0') 
+});
+set1.addEventListener('click', function(){
+    const set1 = document.querySelector('#choice1')
+});
+set2.addEventListener('click', function(){
+    const set2 = document.querySelector('#choice2')
+});
+set3.addEventListener('click', function(){
+    const set3 = document.querySelector('#choice3')
+});
+
+
+
+playButton.addEventListener('click', function() {
+    const selections = [set0, set1, set2, set3]
+    selections.forEach(function(choice, index) {
+        choice.innerHTML = questions[currentIndex].choices[index]
+        choice.addEventListener('click', function(){
+            if(questions[currentIndex].correctAnswer === questions[currentIndex].choices[index]) {
+                console.log(true)
+            }
+                
+        })
+    })
+
+
+
+    
+    playButton.innerHTML = questions[0].question
+    choiceButtonGroup.classList.add('block')
+}) 
+
 
 
 //validation
