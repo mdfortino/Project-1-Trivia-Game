@@ -1,5 +1,4 @@
 # Project-1-Trivia-Game
-# Project-1-Trivia-Game
 Description:
 What project is/should be used for:
 The project is a trivia game of national parks. The problem that this game solves is the user needs a way to test their knowledge of national parks. 
