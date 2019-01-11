@@ -90,9 +90,13 @@ const questions = [
 
 const playButton = document.querySelector('button')
 const choiceButtonGroup = document.querySelector('.button-group')
-
+const choiceButton0 = document.getElementById("choice0")
+console.log(choiceButton0)
 playButton.addEventListener('click', function(){
     playButton.innerHTML = questions[0].question
+    choiceButtonGroup.classList.add('block')
+
+
 })
 
 // //GAME ELEMENTS  
