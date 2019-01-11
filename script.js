@@ -91,13 +91,18 @@ const questions = [
 const playButton = document.querySelector('button')
 const choiceButtonGroup = document.querySelector('.button-group')
 const choiceButton0 = document.getElementById("choice0")
+const choiceButton1 = document.getElementById("choice1")
+const choiceButton2 = document.getElementById("choice2")
+const choiceButton3 = document.getElementById("choice3")
+
+
 console.log(choiceButton0)
 playButton.addEventListener('click', function(){
     playButton.innerHTML = questions[0].question
     choiceButtonGroup.classList.add('block')
-
-
 })
+
+choiceButton0.innerHTML = questions[0].choices[0]
 
 // //GAME ELEMENTS  
 // const playButton = document.querySelector('button')
