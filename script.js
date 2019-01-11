@@ -11,7 +11,7 @@
 let score = 0;
 let currentQuestion = null;
 let currentIndex = 0;
-let answeredQuestions = [];
+let userAnswers = [];
 
 const questions = [
     {   id: 0,
@@ -120,10 +120,15 @@ choiceButton2.addEventListener('click', function () {
 choiceButton3.addEventListener('click', function () {
     alert("correct")
 });
+ 
+userAnswers.forEach((question) => {
+    if(questions.choices[i] === questions.correctAnswer[i]){
+        score +=1;
+    }
+console.log(score)
+})
 
-for(i=0; i<questions.length; i++) {
-    console.log(i)
-}
+
 
 // if answer is correct 
 //     score +=1
