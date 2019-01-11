@@ -4,10 +4,16 @@ What project is/should be used for:
 The project is a trivia game of national parks. The problem that this game solves is the user needs a way to test their knowledge of national parks. 
 
 # Brief Example:
-Code snippet showing how project should be used (if it is meant to be integrated into another app)
-Could be screenshot of your project running in browser
-For example, when the user clicks, test your knowledge(PlayButton), the game starts: first question and choices appear. 
-
+If you click on the "test your knowledge button", the game starts: first question and choices appear. 
+```playButton.addEventListener('click', function(){
+    playButton.innerHTML = questions[0].question
+    choiceButtonGroup.classList.add('block')
+    choiceButton0.innerHTML = questions[0].choices[0]
+    choiceButton1.innerHTML = questions[0].choices[1]
+    choiceButton2.innerHTML = questions[0].choices[2]
+    choiceButton3.innerHTML = questions[0].choices[3]
+})
+```
 
 # List of Features/User Stories:
 I planned desired user features during the development stage and categorized them into the following Bronze, Silver and Gold Lists.
