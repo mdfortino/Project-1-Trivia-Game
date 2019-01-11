@@ -40,7 +40,7 @@ Show/update score on browser for each question
 Go to next question when User click on any choice button
 
 
-List of Technologies Used
+List of Technologies Used:
 HTML, CSS, JavaScript
 
 Installation Instructions/Getting Started:
@@ -48,7 +48,7 @@ Click the following link to render game in browser: https://mdfortino.github.io/
 
 Click the “test your knowledge” button and take the multiple-choice trivia quiz (there are 10 questions). 
 
-Contribution Guidelines
+Contribution Guidelines:
 To contribute to the code, identify bugs, and propose improvements, please see the below links: 
 Link to project’s main repository: 
 Link to project’s issue tracker: 
