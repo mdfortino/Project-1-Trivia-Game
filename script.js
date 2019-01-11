@@ -8,10 +8,10 @@
 //Once Last Question is Answered, Display "Thanks for Playing" with image and option to reset game 
 
 //GAME STATE: 
-let score = 0;
-let currentQuestion = null;
-let currentIndex = 0;
-let userAnswers = [];
+// let score = 0;
+// let currentQuestion = null;
+// let currentIndex = 0;
+// let userAnswers = [];
 
 const questions = [
     {   id: 0,
@@ -120,20 +120,59 @@ choiceButton2.addEventListener('click', function () {
 choiceButton3.addEventListener('click', function () {
     alert("correct")
 });
- 
-userAnswers.forEach((question) => {
-    if(questions.choices[i] === questions.correctAnswer[i]){
+
+let score = 0;
+let userAnswers = [];
+for(i = 0; i<questions.length; i++) {
+    if(userAnswers === questions.correctAnswer){
         score +=1;
-    }
-console.log(score)
-})
-
-
+}
+}
+ 
+// userAnswers.forEach((question) => {
+//     if(questions.choiceButton === questions.correctAnswer){
+//         score +=1;
+//     }
+// console.log(score)
+// })
 
 // if answer is correct 
 //     score +=1
 //     scoreBoard.innerHTML = score
 //     move to next question
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // //GAME ELEMENTS  
 // const playButton = document.querySelector('button')
@@ -189,18 +228,6 @@ console.log(score)
 //     playButton.addEventListener('click', saveAnswer);
 //     displayNextQuestion();
 // }
-// set0.addEventListener('click', function(){
-//     const set0 = document.querySelector('#choice0') 
-// });
-// set1.addEventListener('click', function(){
-//     const set1 = document.querySelector('#choice1')
-// });
-// set2.addEventListener('click', function(){
-//     const set2 = document.querySelector('#choice2')
-// });
-// set3.addEventListener('click', function(){
-//     const set3 = document.querySelector('#choice3')
-// });
 
 
 
