@@ -8,10 +8,10 @@
 //Once Last Question is Answered, Display "Thanks for Playing" with image and option to reset game 
 
 //GAME STATE: 
-let totalScore = 0;
-let currentQuestion = null;
-let currentIndex = 0;
-let answeredQuestions = [];
+// let score = 0;
+// let currentQuestion = null;
+// let currentIndex = 0;
+// let userAnswers = [];
 
 const questions = [
     {   id: 0,
@@ -75,101 +75,210 @@ const questions = [
     }
 ]
 
-//GAME ELEMENTS  
+//START OVER (AGAIN AGAIN) PLAN:
+//Add event listener to start game button (alert)
+//Make button show question
+//Make button show choices buttons (button group)
+//Add content(choices) to choices buttons
+//Add event listeners to each choice button
+
+//If choice is correct:
+//add to score (total +=1)
+//display the scoreboard with updated score (DOM)
+//move to next question
+//If choice is wrong:
+//If choice button selected is wrong, move to next question
+
 const playButton = document.querySelector('button')
 const choiceButtonGroup = document.querySelector('.button-group')
-let score = document.querySelector("h2")
+const choiceButton0 = document.getElementById("choice0")
+const choiceButton1 = document.getElementById("choice1")
+const choiceButton2 = document.getElementById("choice2")
+const choiceButton3 = document.getElementById("choice3")
+const scoreBoard = document.getElementById("score-board")
 
-//GAME METHODS 
-//End Game: 
-const endGame = () => {
-    answeredQuestions.forEach((question) => {
-        //add to total score
-        if(question.selectedAnswer === question.correctAnswer)
-            totalScore++;
-    });
-    alert(`Thanks for playing! Here is your score: ${totalScore}`)
-    playButton.removeEventListener("Click", startGame);
-    choiceButtonGroup.removeEventListener("Click", saveAnswer);
-    choiceButtonGroup.style.display = "none";
-}; 
-// MDN Example: 
-// function myFunction(event) { 
-//     var x = event.target;
-//     document.getElementById("demo").innerHTML = "Triggered by a " + x.tagName + " element";
-//   }
 
-//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
-//Object.assign() copies values of own properties from one or more source objects to target object
-//Store Answer:
-const saveAnswer = (evt) => {
-    const selectedAnswer = evt.target.value;
-    const answeredQuestion = Object.assign({ selectedAnswer: selectedAnswer }, currentQuestion)
-    answeredQuestions.push(answeredQuestion);
-    currentQuestion = null;
-    getNextQuestion();
-  }
-  //Display Next Question: 
-  const displayNextQuestion = () => {
-      if(currentIndex == questions.length){
-          return endGame();
-      }
-  }
-  currentQuestion = questions[currentIndex]; 
+console.log(choiceButton0)
+playButton.addEventListener('click', function(){
+    playButton.innerHTML = questions[0].question
+    choiceButtonGroup.classList.add('block')
+    choiceButton0.innerHTML = questions[0].choices[0]
+    choiceButton1.innerHTML = questions[0].choices[1]
+    choiceButton2.innerHTML = questions[0].choices[2]
+    choiceButton3.innerHTML = questions[0].choices[3]
+})
 
-//The map() method creates a new array with the results of calling a provided function on every element in the calling array
-//want array of current question and answer choices to display one after another: 
-currentQuestion current choice
-// document.querySelector('id="choice0")
-//ex: const map1 = array1.map(x => x * 2);
+choiceButton0.addEventListener('click', function () {
+    alert("wrong")
+});
+choiceButton1.addEventListener('click', function () {
+    alert("wrong")
+});
+choiceButton2.addEventListener('click', function () {
+    alert("wrong")
+});
+choiceButton3.addEventListener('click', function () {
+    alert("correct")
+});
 
-const startGame = () => {
-choiceButtonGroup.classList.add('block');
-playButton.addEventListener('click', saveAnswer);
-displayNextQuestion();
+let score = 0;
+let userAnswers = [];
+for(i = 0; i<questions.length; i++) {
+    if(userAnswers === questions.correctAnswer){
+        score +=1;
 }
-playButton.addEventListener('click', startGame)
-console.log(totalScore)
-//     const set0 = document.querySelector('#choice0')
-//     const set1 = document.querySelector('#choice1')
-//     const set2 = document.querySelector('#choice2')
-//     const set3 = document.querySelector('#choice3')
-//     set0.innerHTML = questions[0].choices[0]
-//     set1.innerHTML = questions[0].choices[1]
-//     set2.innerHTML = questions[0].choices[2]
-//     set3.innerHTML = questions[0].choices[3]
+}
+ 
+// userAnswers.forEach((question) => {
+//     if(questions.choiceButton === questions.correctAnswer){
+//         score +=1;
+//     }
+// console.log(score)
+// })
+
+// if answer is correct 
+//     score +=1
+//     scoreBoard.innerHTML = score
+//     move to next question
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// //GAME ELEMENTS  
+// const playButton = document.querySelector('button')
+// const choiceButtonGroup = document.querySelector('.button-group')
+// let score = document.querySelector("h2")
+
+// //GAME METHODS 
+// //End Game: 
+// const endGame = () => {
+//     answeredQuestions.forEach((question) => {
+//         //add to total score
+//         if(question.selectedAnswer === question.correctAnswer)
+//             totalScore++;
+//     });
+//     alert(`Thanks for playing! Here is your score: ${totalScore}`)
+//     playButton.removeEventListener("Click", startGame);
+//     choiceButtonGroup.removeEventListener("Click", saveAnswer);
+//     choiceButtonGroup.style.display = "none";
+// }; 
+// // MDN Example: 
+// // function myFunction(event) { 
+// //     var x = event.target;
+// //     document.getElementById("demo").innerHTML = "Triggered by a " + x.tagName + " element";
+// //   }
+
+// //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
+// //Object.assign() copies values of own properties from one or more source objects to target object
+// //Store Answer:
+// const saveAnswer = (evt) => {
+//     const selectedAnswer = evt.target.value;
+//     const answeredQuestion = Object.assign({ selectedAnswer: selectedAnswer }, currentQuestion)
+//     answeredQuestions.push(answeredQuestion);
+//     currentQuestion = null;
+//     displayNextQuestion();
+//   }
+//   //Display Next Question: 
+//   const displayNextQuestion = () => {
+//       if(currentIndex == questions.length){
+//           return endGame();
+//       }
+//   }
+// //   currentQuestion = questions[currentIndex]; 
+
+// //   currentQuestion.choices.map((choice, index) =>
+// //The map() method creates a new array with the results of calling a provided function on every element in the calling array
+// //want array of current question and answer choices to display one after another: 
+// // currentQuestion current choice
+// // document.querySelector('id="choice0")
+// //ex: const map1 = array1.map(x => x * 2);
+
+// const startGame = () => {
+//     choiceButtonGroup.classList.add('block');
+//     playButton.addEventListener('click', saveAnswer);
+//     displayNextQuestion();
+// }
+
+
+
+// playButton.addEventListener('click', function() {
+//     const selections = [set0, set1, set2, set3]
+//     selections.forEach(function(choice, index) {
+//         choice.innerHTML = questions[currentIndex].choices[index]
+//         choice.addEventListener('click', function(){
+//             if(questions[currentIndex].correctAnswer === questions[currentIndex].choices[index]) {
+//                 console.log(true)
+//             }
+                
+//         })
+//     })
+
+
+
+    
 //     playButton.innerHTML = questions[0].question
-//     buttonGroup.classList.add('block')
-// })
+//     choiceButtonGroup.classList.add('block')
+// }) 
 
 
-//validation
-// for (var i = 0; i <= questions.length; i++) {
-//     if(questions[i]===null )
-// }
-// const answers = document.getElementById('answers')
-// console.log(answers.dataset)
 
-// document.body.addEventListener('click', evt => {
-//     if (event.target.nodeName === "choice3") {
-//     console.log("Clicked correct", event.target.textContent);
-//     }
-// });
-// set buttonGroup setAttribute to ('data-index',answer)
-// buttonGroup.addEventListener('click',function(event){
-//     const checkSelection = event.target.dataset.index
-//     console.log(checkSelection)
-// })
+// //validation
+// // for (var i = 0; i <= questions.length; i++) {
+// //     if(questions[i]===null )
+// // }
+// // const answers = document.getElementById('answers')
+// // console.log(answers.dataset)
 
-// for(i=0; i< questions.length; i++){
-//     if(questions[i] === correctAnswers[i]) {
-//       question =  
-//     }
-//     if(choice == questions[])
-// }
+// // document.body.addEventListener('click', evt => {
+// //     if (event.target.nodeName === "choice3") {
+// //     console.log("Clicked correct", event.target.textContent);
+// //     }
+// // });
+// // set buttonGroup setAttribute to ('data-index',answer)
+// // buttonGroup.addEventListener('click',function(event){
+// //     const checkSelection = event.target.dataset.index
+// //     console.log(checkSelection)
+// // })
 
-//Timer Function: 
-//method to countdown: setInterval(countdown, 1000)
-//method to track and display time remaining: getTime(), Math.floor
-// let seconds
-// let countdownTimer = setInterval(createTimer,1000)
+// // for(i=0; i< questions.length; i++){
+// //     if(questions[i] === correctAnswers[i]) {
+// //       question =  
+// //     }
+// //     if(choice == questions[])
+// // }
+
+// //Timer Function: 
+// //method to countdown: setInterval(countdown, 1000)
+// //method to track and display time remaining: getTime(), Math.floor
+// // let seconds
+// // let countdownTimer = setInterval(createTimer,1000)
