@@ -103,6 +103,10 @@ playButton.addEventListener('click', function(){
 })
 
 choiceButton0.innerHTML = questions[0].choices[0]
+choiceButton1.innerHTML = questions[0].choices[1]
+choiceButton2.innerHTML = questions[0].choices[2]
+choiceButton3.innerHTML = questions[0].choices[3]
+
 
 // //GAME ELEMENTS  
 // const playButton = document.querySelector('button')
