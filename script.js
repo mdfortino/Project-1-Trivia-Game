@@ -75,123 +75,143 @@ const questions = [
     }
 ]
 
-//GAME ELEMENTS  
+//START OVER (AGAIN AGAIN) PLAN:
+//Add event listener to start game button (alert)
+//Make button show question
+//Make button show choices buttons (button group)
+//Add content(choices) to choices buttons
+//Add event listeners to each choice button
+//If correct:
+//add to score (total +=1)
+//display the scoreboard with updated score (DOM)
+//move to next question
+//If wrong:
+//If choice button selected is wrong, move to next question
+
 const playButton = document.querySelector('button')
 const choiceButtonGroup = document.querySelector('.button-group')
-let score = document.querySelector("h2")
 
-//GAME METHODS 
-//End Game: 
-const endGame = () => {
-    answeredQuestions.forEach((question) => {
-        //add to total score
-        if(question.selectedAnswer === question.correctAnswer)
-            totalScore++;
-    });
-    alert(`Thanks for playing! Here is your score: ${totalScore}`)
-    playButton.removeEventListener("Click", startGame);
-    choiceButtonGroup.removeEventListener("Click", saveAnswer);
-    choiceButtonGroup.style.display = "none";
-}; 
-// MDN Example: 
-// function myFunction(event) { 
-//     var x = event.target;
-//     document.getElementById("demo").innerHTML = "Triggered by a " + x.tagName + " element";
+playButton.addEventListener('click', function(){
+    playButton.innerHTML = questions[0].question
+})
+
+// //GAME ELEMENTS  
+// const playButton = document.querySelector('button')
+// const choiceButtonGroup = document.querySelector('.button-group')
+// let score = document.querySelector("h2")
+
+// //GAME METHODS 
+// //End Game: 
+// const endGame = () => {
+//     answeredQuestions.forEach((question) => {
+//         //add to total score
+//         if(question.selectedAnswer === question.correctAnswer)
+//             totalScore++;
+//     });
+//     alert(`Thanks for playing! Here is your score: ${totalScore}`)
+//     playButton.removeEventListener("Click", startGame);
+//     choiceButtonGroup.removeEventListener("Click", saveAnswer);
+//     choiceButtonGroup.style.display = "none";
+// }; 
+// // MDN Example: 
+// // function myFunction(event) { 
+// //     var x = event.target;
+// //     document.getElementById("demo").innerHTML = "Triggered by a " + x.tagName + " element";
+// //   }
+
+// //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
+// //Object.assign() copies values of own properties from one or more source objects to target object
+// //Store Answer:
+// const saveAnswer = (evt) => {
+//     const selectedAnswer = evt.target.value;
+//     const answeredQuestion = Object.assign({ selectedAnswer: selectedAnswer }, currentQuestion)
+//     answeredQuestions.push(answeredQuestion);
+//     currentQuestion = null;
+//     displayNextQuestion();
 //   }
+//   //Display Next Question: 
+//   const displayNextQuestion = () => {
+//       if(currentIndex == questions.length){
+//           return endGame();
+//       }
+//   }
+// //   currentQuestion = questions[currentIndex]; 
 
-//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
-//Object.assign() copies values of own properties from one or more source objects to target object
-//Store Answer:
-const saveAnswer = (evt) => {
-    const selectedAnswer = evt.target.value;
-    const answeredQuestion = Object.assign({ selectedAnswer: selectedAnswer }, currentQuestion)
-    answeredQuestions.push(answeredQuestion);
-    currentQuestion = null;
-    displayNextQuestion();
-  }
-  //Display Next Question: 
-  const displayNextQuestion = () => {
-      if(currentIndex == questions.length){
-          return endGame();
-      }
-  }
-//   currentQuestion = questions[currentIndex]; 
+// //   currentQuestion.choices.map((choice, index) =>
+// //The map() method creates a new array with the results of calling a provided function on every element in the calling array
+// //want array of current question and answer choices to display one after another: 
+// // currentQuestion current choice
+// // document.querySelector('id="choice0")
+// //ex: const map1 = array1.map(x => x * 2);
 
-//   currentQuestion.choices.map((choice, index) =>
-//The map() method creates a new array with the results of calling a provided function on every element in the calling array
-//want array of current question and answer choices to display one after another: 
-// currentQuestion current choice
-// document.querySelector('id="choice0")
-//ex: const map1 = array1.map(x => x * 2);
-
-const startGame = () => {
-    choiceButtonGroup.classList.add('block');
-    playButton.addEventListener('click', saveAnswer);
-    displayNextQuestion();
-}
-set0.addEventListener('click', function(){
-    const set0 = document.querySelector('#choice0') 
-});
-set1.addEventListener('click', function(){
-    const set1 = document.querySelector('#choice1')
-});
-set2.addEventListener('click', function(){
-    const set2 = document.querySelector('#choice2')
-});
-set3.addEventListener('click', function(){
-    const set3 = document.querySelector('#choice3')
-});
+// const startGame = () => {
+//     choiceButtonGroup.classList.add('block');
+//     playButton.addEventListener('click', saveAnswer);
+//     displayNextQuestion();
+// }
+// set0.addEventListener('click', function(){
+//     const set0 = document.querySelector('#choice0') 
+// });
+// set1.addEventListener('click', function(){
+//     const set1 = document.querySelector('#choice1')
+// });
+// set2.addEventListener('click', function(){
+//     const set2 = document.querySelector('#choice2')
+// });
+// set3.addEventListener('click', function(){
+//     const set3 = document.querySelector('#choice3')
+// });
 
 
 
-playButton.addEventListener('click', function() {
-    const selections = [set0, set1, set2, set3]
-    selections.forEach(function(choice, index) {
-        choice.innerHTML = questions[currentIndex].choices[index]
-        choice.addEventListener('click', function(){
-            if(questions[currentIndex].correctAnswer === questions[currentIndex].choices[index]) {
-                console.log(true)
-            }
+// playButton.addEventListener('click', function() {
+//     const selections = [set0, set1, set2, set3]
+//     selections.forEach(function(choice, index) {
+//         choice.innerHTML = questions[currentIndex].choices[index]
+//         choice.addEventListener('click', function(){
+//             if(questions[currentIndex].correctAnswer === questions[currentIndex].choices[index]) {
+//                 console.log(true)
+//             }
                 
-        })
-    })
+//         })
+//     })
 
 
 
     
-    playButton.innerHTML = questions[0].question
-    choiceButtonGroup.classList.add('block')
-}) 
+//     playButton.innerHTML = questions[0].question
+//     choiceButtonGroup.classList.add('block')
+// }) 
 
 
 
-//validation
-// for (var i = 0; i <= questions.length; i++) {
-//     if(questions[i]===null )
-// }
-// const answers = document.getElementById('answers')
-// console.log(answers.dataset)
+// //validation
+// // for (var i = 0; i <= questions.length; i++) {
+// //     if(questions[i]===null )
+// // }
+// // const answers = document.getElementById('answers')
+// // console.log(answers.dataset)
 
-// document.body.addEventListener('click', evt => {
-//     if (event.target.nodeName === "choice3") {
-//     console.log("Clicked correct", event.target.textContent);
-//     }
-// });
-// set buttonGroup setAttribute to ('data-index',answer)
-// buttonGroup.addEventListener('click',function(event){
-//     const checkSelection = event.target.dataset.index
-//     console.log(checkSelection)
-// })
+// // document.body.addEventListener('click', evt => {
+// //     if (event.target.nodeName === "choice3") {
+// //     console.log("Clicked correct", event.target.textContent);
+// //     }
+// // });
+// // set buttonGroup setAttribute to ('data-index',answer)
+// // buttonGroup.addEventListener('click',function(event){
+// //     const checkSelection = event.target.dataset.index
+// //     console.log(checkSelection)
+// // })
 
-// for(i=0; i< questions.length; i++){
-//     if(questions[i] === correctAnswers[i]) {
-//       question =  
-//     }
-//     if(choice == questions[])
-// }
+// // for(i=0; i< questions.length; i++){
+// //     if(questions[i] === correctAnswers[i]) {
+// //       question =  
+// //     }
+// //     if(choice == questions[])
+// // }
 
-//Timer Function: 
-//method to countdown: setInterval(countdown, 1000)
-//method to track and display time remaining: getTime(), Math.floor
-// let seconds
-// let countdownTimer = setInterval(createTimer,1000)
+// //Timer Function: 
+// //method to countdown: setInterval(countdown, 1000)
+// //method to track and display time remaining: getTime(), Math.floor
+// // let seconds
+// // let countdownTimer = setInterval(createTimer,1000)
