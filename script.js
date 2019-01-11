@@ -8,7 +8,7 @@
 //Once Last Question is Answered, Display "Thanks for Playing" with image and option to reset game 
 
 //GAME STATE: 
-let totalScore = 0;
+let score = 0;
 let currentQuestion = null;
 let currentIndex = 0;
 let answeredQuestions = [];
@@ -94,6 +94,7 @@ const choiceButton0 = document.getElementById("choice0")
 const choiceButton1 = document.getElementById("choice1")
 const choiceButton2 = document.getElementById("choice2")
 const choiceButton3 = document.getElementById("choice3")
+const scoreBoard = document.getElementById("score-board")
 
 
 console.log(choiceButton0)
@@ -119,7 +120,12 @@ choiceButton3.addEventListener('click', function () {
     alert("correct")
 });
 
-
+// for(i=0; i<questions.length; i++) {
+//     if answer is correct 
+//     add to total (total +=1)
+//     display total on scoreboard
+//     move to next question
+// }
 
 
 
