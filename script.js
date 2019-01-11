@@ -106,8 +106,17 @@ playButton.addEventListener('click', function(){
     choiceButton3.innerHTML = questions[0].choices[3]
 })
 
-choiceButton0.addEventListener('click', function(){
-alert("wrong")
+choiceButton0.addEventListener('click', function () {
+    alert("wrong")
+});
+choiceButton1.addEventListener('click', function () {
+    alert("wrong")
+});
+choiceButton2.addEventListener('click', function () {
+    alert("wrong")
+});
+choiceButton3.addEventListener('click', function () {
+    alert("correct")
 });
 
 
