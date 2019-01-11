@@ -100,12 +100,18 @@ console.log(choiceButton0)
 playButton.addEventListener('click', function(){
     playButton.innerHTML = questions[0].question
     choiceButtonGroup.classList.add('block')
+    choiceButton0.innerHTML = questions[0].choices[0]
+    choiceButton1.innerHTML = questions[0].choices[1]
+    choiceButton2.innerHTML = questions[0].choices[2]
+    choiceButton3.innerHTML = questions[0].choices[3]
 })
 
-choiceButton0.innerHTML = questions[0].choices[0]
-choiceButton1.innerHTML = questions[0].choices[1]
-choiceButton2.innerHTML = questions[0].choices[2]
-choiceButton3.innerHTML = questions[0].choices[3]
+choiceButton0.addEventListener('click', function(){
+alert("wrong")
+});
+
+
+
 
 
 // //GAME ELEMENTS  
