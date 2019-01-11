@@ -45,6 +45,7 @@ HTML, CSS, JavaScript
 
 Installation Instructions/Getting Started:
 Click the following link to render game in browser: https://mdfortino.github.io/Project-1-Trivia-Game/ 
+
 Click the “test your knowledge” button and take the multiple-choice trivia quiz (there are 10 questions). 
 
 Contribution Guidelines
