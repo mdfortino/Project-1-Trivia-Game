@@ -50,5 +50,5 @@ Click the “test your knowledge” button and take the multiple-choice trivia q
 
 Contribution Guidelines:
 To contribute to the code, identify bugs, and propose improvements, please see the below links: 
-Link to project’s main repository: 
+Link to project’s main repository: https://github.com/mdfortino/Project-1-Trivia-Game 
 Link to project’s issue tracker: 
