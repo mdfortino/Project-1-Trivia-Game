@@ -81,11 +81,12 @@ const questions = [
 //Make button show choices buttons (button group)
 //Add content(choices) to choices buttons
 //Add event listeners to each choice button
-//If correct:
+
+//If choice is correct:
 //add to score (total +=1)
 //display the scoreboard with updated score (DOM)
 //move to next question
-//If wrong:
+//If choice is wrong:
 //If choice button selected is wrong, move to next question
 
 const playButton = document.querySelector('button')
@@ -120,14 +121,14 @@ choiceButton3.addEventListener('click', function () {
     alert("correct")
 });
 
-// for(i=0; i<questions.length; i++) {
-//     if answer is correct 
-//     add to total (total +=1)
-//     display total on scoreboard
+for(i=0; i<questions.length; i++) {
+    console.log(i)
+}
+
+// if answer is correct 
+//     score +=1
+//     scoreBoard.innerHTML = score
 //     move to next question
-// }
-
-
 
 // //GAME ELEMENTS  
 // const playButton = document.querySelector('button')
