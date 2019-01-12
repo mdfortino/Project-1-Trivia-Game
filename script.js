@@ -13,6 +13,7 @@
 // let currentIndex = 0;
 // let userAnswers = [];
 
+let score = 0; 
 const questions = [
     {   id: 0,
         question: "What is the newest national park?",
@@ -89,6 +90,7 @@ const questions = [
 //If choice is wrong:
 //If choice button selected is wrong, move to next question
 
+
 const playButton = document.querySelector('button')
 const choiceButtonGroup = document.querySelector('.button-group')
 const choiceButton0 = document.getElementById("choice0")
@@ -97,8 +99,8 @@ const choiceButton2 = document.getElementById("choice2")
 const choiceButton3 = document.getElementById("choice3")
 const scoreBoard = document.getElementById("score-board")
 
+scoreBoard.innerHTML = "questions correct: " + score 
 
-console.log(choiceButton0)
 playButton.addEventListener('click', function(){
     playButton.innerHTML = questions[0].question
     choiceButtonGroup.classList.add('block')
@@ -106,10 +108,10 @@ playButton.addEventListener('click', function(){
     choiceButton1.innerHTML = questions[0].choices[1]
     choiceButton2.innerHTML = questions[0].choices[2]
     choiceButton3.innerHTML = questions[0].choices[3]
-})
+});
 
 choiceButton0.addEventListener('click', function () {
-    alert("wrong")
+    alert("wrong") 
 });
 choiceButton1.addEventListener('click', function () {
     alert("wrong")
@@ -121,13 +123,16 @@ choiceButton3.addEventListener('click', function () {
     alert("correct")
 });
 
-let score = 0;
-let userAnswers = [];
-for(i = 0; i<questions.length; i++) {
-    if(userAnswers === questions.correctAnswer){
-        score +=1;
-}
-}
+
+// userAnswers.forEach((question) => {
+
+// let score = 0;
+// let userAnswers = 0;
+// for(i = 0; i<questions.length; i++) {
+//     if(userAnswers === questions.correctAnswer){
+//         score +=1;
+// }
+// }
  
 // userAnswers.forEach((question) => {
 //     if(questions.choiceButton === questions.correctAnswer){
