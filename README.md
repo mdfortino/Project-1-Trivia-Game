@@ -36,7 +36,7 @@ Ability to compete with other player(s)/teams
 Ability to move to different levels 
 
 # Which completed/yet to complete
-I completedthe bronze requirements: 
+I completed the bronze requirements: 
 HTML with basic CSS
 Questions and choices appear
 Score updates after User answers each question
