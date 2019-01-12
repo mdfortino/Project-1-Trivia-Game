@@ -87,9 +87,9 @@ const questions = [
 //display the scoreboard with updated score (DOM)
 //move to next question
 //If choice is wrong:
-//If choice button selected is wrong, dispaly next question (DOM)
+//If choice button selected is wrong, display next question (DOM)
 
-//*scoreboard and counter should only be displayed for each question... after click "test your knowledge"
+//*scoreboard, counter and timer should only be displayed for each question... after click "test your knowledge"
 
 const playButton = document.querySelector('button')
 const choiceButtonGroup = document.querySelector('.button-group')
