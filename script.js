@@ -13,7 +13,6 @@
 // let currentIndex = 0;
 // let userAnswers = [];
 
-let score = 0; 
 const questions = [
     {   id: 0,
         question: "What is the newest national park?",
@@ -88,8 +87,9 @@ const questions = [
 //display the scoreboard with updated score (DOM)
 //move to next question
 //If choice is wrong:
-//If choice button selected is wrong, move to next question
+//If choice button selected is wrong, dispaly next question (DOM)
 
+//*scoreboard and counter should only be displayed for each question... after click "test your knowledge"
 
 const playButton = document.querySelector('button')
 const choiceButtonGroup = document.querySelector('.button-group')
@@ -98,8 +98,13 @@ const choiceButton1 = document.getElementById("choice1")
 const choiceButton2 = document.getElementById("choice2")
 const choiceButton3 = document.getElementById("choice3")
 const scoreBoard = document.getElementById("score-board")
+const counter = document.getElementById("count")
+
+let score = 0
+let count = 10
 
 scoreBoard.innerHTML = "questions correct: " + score 
+counter.innerHTML = "questions left: " + count
 
 playButton.addEventListener('click', function(){
     playButton.innerHTML = questions[0].question
@@ -124,7 +129,27 @@ choiceButton3.addEventListener('click', function () {
 });
 
 
-// userAnswers.forEach((question) => {
+
+
+
+// const choiceButtons = [choiceButton0, choiceButton1, choiceButton2, choiceButton3]
+// //     choiceButtons.forEach(function(choice,index) {
+// //         choice.innerHTML = questions[currentIndex].choices[index]
+// //         choice.addEventListener('click', function(){
+// //             if(questions[currentIndex].correctAnswer === questions[currentIndex].choices[index]) {
+// //                 console.log(true)
+// //             }
+// // userAnswers.forEach((question) => {
+
+// choices.forEach(function(choice, index) {
+        //         choice.innerHTML = questions[currentIndex].choices[index]
+        //         choice.addEventListener('click', function(){
+        //             if(questions[currentIndex].correctAnswer === questions[currentIndex].choices[index]) {
+        //                 console.log(true)
+        //             }
+                        
+        //         })
+        //     })
 
 // let score = 0;
 // let userAnswers = 0;

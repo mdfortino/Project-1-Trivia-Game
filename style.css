@@ -22,13 +22,15 @@ body {
 .button-group {
     display: none; 
     text-align: center; 
-    width: 500px;
+    width: 700px;
     padding: 20px; 
     border-radius: 28px;
 }
 
 .block {
     display: block;
+    text-align: center; 
+
 }
 
 
