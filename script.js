@@ -93,40 +93,46 @@ const questions = [
 
 const playButton = document.querySelector('button')
 const choiceButtonGroup = document.querySelector('.button-group')
-const choiceButton0 = document.getElementById("choice0")
-const choiceButton1 = document.getElementById("choice1")
-const choiceButton2 = document.getElementById("choice2")
-const choiceButton3 = document.getElementById("choice3")
+const label0 = document.getElementById("label0")
+const label1 = document.getElementById("label1")
+const label2 = document.getElementById("label2")
+const label3 = document.getElementById("label3")
 const scoreBoard = document.getElementById("score-board")
 const counter = document.getElementById("count")
+const button0 = document.getElementById("choice0")
+const button1 = document.getElementById("choice1")
+const button2 = document.getElementById("choice2")
+const button3 = document.getElementById("choice3")
 
 let score = 0
 let count = 10
+let currentIndex = 0
 
 scoreBoard.innerHTML = "questions correct: " + score 
 counter.innerHTML = "questions left: " + count
 
 playButton.addEventListener('click', function(){
-    playButton.innerHTML = questions[0].question
+    playButton.innerHTML = questions[currentIndex].question
     choiceButtonGroup.classList.add('block')
-    choiceButton0.innerHTML = questions[0].choices[0]
-    choiceButton1.innerHTML = questions[0].choices[1]
-    choiceButton2.innerHTML = questions[0].choices[2]
-    choiceButton3.innerHTML = questions[0].choices[3]
+    label0.innerHTML = questions[currentIndex].choices[0]
+    button0.value = questions[currentIndex].choices[0]
+    label1.innerHTML = questions[currentIndex].choices[1]
+    button1.value = questions[currentIndex].choices[1]
+    label2.innerHTML = questions[currentIndex].choices[2]
+    button2.value = questions[currentIndex].choices[2]
+    label3.innerHTML = questions[currentIndex].choices[3]
+    button3.value = questions[currentIndex].choices[3]
 });
 
-choiceButton0.addEventListener('click', function () {
-    alert("wrong") 
-});
-choiceButton1.addEventListener('click', function () {
-    alert("wrong")
-});
-choiceButton2.addEventListener('click', function () {
-    alert("wrong")
-});
-choiceButton3.addEventListener('click', function () {
-    alert("correct")
-});
+function userClicked() {
+    let userInput = document.querySelector('input[name="answer"]:checked').value;
+    alert(userInput)
+}
+
+//button0.addEventListener('click', userClicked());
+//button1.addEventListener('click', userClicked());
+//button2.addEventListener('click', userClicked());
+//button3.addEventListener('click', userClicked());
 
 
 
