@@ -128,10 +128,11 @@ choiceButton3.addEventListener('click', function () {
 
 // let score = 0;
 // let userAnswers = 0;
+// how to get input/value from choices 
 // for(i = 0; i<questions.length; i++) {
-//     if(userAnswers === questions.correctAnswer){
+//     if(the value of the choice selected is equal to the value of correctAnswer){
 //         score +=1;
-// }
+// // }
 // }
  
 // userAnswers.forEach((question) => {
