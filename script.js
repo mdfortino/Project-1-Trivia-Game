@@ -152,6 +152,9 @@ scoreBoard.innerHTML = "questions correct: " + score;
 counter.innerHTML = "questions left: " + count;
 
 playButton.addEventListener("click", function() {
+  displayNextQuestion();
+});
+function displayNextQuestion(){
   playButton.innerHTML = questions[currentIndex].question;
   choiceButtonGroup.classList.add("block");
   label0.innerHTML = questions[currentIndex].choices[0];
@@ -162,17 +165,22 @@ playButton.addEventListener("click", function() {
   button2.value = questions[currentIndex].choices[2];
   label3.innerHTML = questions[currentIndex].choices[3];
   button3.value = questions[currentIndex].choices[3];
-});
-
+}
 function userClicked() {
   let userInput = document.querySelector('input[name="answer"]:checked').value;
   // alert(userInput)
   if (userInput === questions[currentIndex].correctAnswer) {
     alert("correct");
+    score ++
+    scoreBoard.innerHTML = "questions correct: " + score;
   }
   else {
     alert(questions[currentIndex].fact)
   }
+  currentIndex++;
+  count = -1
+  displayNextQuestion()
+  //uncheck radio button 
 }
 
 //button0.addEventListener('click', userClicked());
