@@ -143,6 +143,8 @@ const button0 = document.getElementById("choice0");
 const button1 = document.getElementById("choice1");
 const button2 = document.getElementById("choice2");
 const button3 = document.getElementById("choice3");
+const resultsDiv = document.getElementById("results")
+const timer = document.getElementById("timeRemaining")
 
 let score = 0;
 let count = 10;
@@ -150,10 +152,17 @@ let currentIndex = 0;
 
 scoreBoard.innerHTML = "questions correct: " + score;
 counter.innerHTML = "questions left: " + count;
+scoreBoard.style.display = "none";
+counter.style.display = "none";
+timer.style.display = "none"
 
 playButton.addEventListener("click", function() {
-  displayNextQuestion();
+    scoreBoard.style.display = "block";
+    counter.style.display = "block"
+    timer.style.display = "block"
+    displayNextQuestion();
 });
+
 function displayNextQuestion(){
   playButton.innerHTML = questions[currentIndex].question;
   choiceButtonGroup.classList.add("block");
@@ -165,22 +174,43 @@ function displayNextQuestion(){
   button2.value = questions[currentIndex].choices[2];
   label3.innerHTML = questions[currentIndex].choices[3];
   button3.value = questions[currentIndex].choices[3];
+  document.getElementById('choice0').checked = false;
+  document.getElementById('choice1').checked = false;
+  document.getElementById('choice2').checked = false;
+  document.getElementById('choice3').checked = false;
 }
 function userClicked() {
-  let userInput = document.querySelector('input[name="answer"]:checked').value;
-  // alert(userInput)
-  if (userInput === questions[currentIndex].correctAnswer) {
-    alert("correct");
-    score ++
-    scoreBoard.innerHTML = "questions correct: " + score;
-  }
-  else {
-    alert(questions[currentIndex].fact)
-  }
-  currentIndex++;
-  count = -1
-  displayNextQuestion()
-  //uncheck radio button 
+    if(currentIndex<10){
+
+        let userInput = document.querySelector('input[name="answer"]:checked').value;
+        // alert(userInput)
+        if (userInput === questions[currentIndex].correctAnswer) {
+            alert("correct");
+            score ++
+            scoreBoard.innerHTML = "questions correct: " + score;
+        }
+        else {
+            alert(questions[currentIndex].fact)
+        }
+        currentIndex++;
+        count--
+        counter.innerHTML = "questions left: " + count;
+        if(currentIndex < 9) {
+            displayNextQuestion()
+        }
+        else {
+            alert("game over")
+
+            results.innerHTML = "Thank you for playing! Here is your final score: " + score 
+            choiceButtonGroup.style.display = "none";
+            playButton.style.display = "none";
+            scoreBoard.style.display = "none";
+            counter.style.display = "none"
+            timer.style.display = "none"
+        }   
+
+    }
+
 }
 
 //button0.addEventListener('click', userClicked());
