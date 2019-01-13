@@ -2,6 +2,14 @@ body {
     text-align: center; 
     font-family: 'Raleway', sans-serif;
 }
+.button-group{
+    font-size:18px;
+    vertical-align: middle;
+    position: relative; 
+    margin: 50px; 
+    float: left; 
+  }
+  
 /* .hero-image {
     background-image:url("images/shenandoah.jpeg");
     background-size: cover;
@@ -22,15 +30,22 @@ body {
 .button-group {
     display: none; 
     text-align: center; 
-    width: 800px;
-    padding: 10px; 
+    width: 200px;
     border-radius: 58px;
+    /* font-size: 50px;  */
 }
 
 
 .block {
     display: block;
     text-align: center; 
+    /* font-family: 'Raleway', sans-serif;
+    font-size: 10px;  */
+
+}
+label {
+display: block; 
+text-align: center;
 
 }
 

@@ -18,7 +18,7 @@
 const questions = [
   {
     id: 0,
-    question: "What National Park contains the highest peak in North America??",
+    question: "What National Park contains the highest peak in North America?",
     choices: ["Grand Teton National Park", "Hawaii Volcanoes National Park", "Mount Rainier National Park", "Denali National Park"],
     correctAnswer: "Denali National Park",
     fact: "Wrong! Formerly known as Mount McKinley, Denali is the tallest mountain in North America with a peak elevation of 20,310 feet. Thinking about climbing this massive mountain? Make sure you pack enough supplies for a 3-4 week trip."
