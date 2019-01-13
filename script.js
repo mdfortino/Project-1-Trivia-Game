@@ -16,17 +16,17 @@
 const questions = [
   {
     id: 0,
-    question: "What is the newest national park?",
-    choices: ["Congaree", "Big Bend", "Mount Rainier", "Great Sand Dunes"],
-    correctAnswer: "Great Sand Dunes",
-    fact: "Great Sand Dunes factssss "
+    question: "What National Park contains the highest peak in North America??",
+    choices: ["Grand Teton National Park", "Hawaii Volcanoes National Park", "Mount Rainier National Park", "Denali National Park"],
+    correctAnswer: "Denali National Park",
+    fact: "Wrong! Formerly known as Mount McKinley, Denali is the tallest mountain in North America with a peak elevation of 20,310 feet. Thinking about climbing this massive mountain? Make sure you pack enough supplies for a 3-4 week trip."
   },
   {
     id: 1,
     question: "What is the most visited park in the National Park System?",
     choices: ["Acadia", "Grand Canyon", "Great Smoky Mountains", "Yellowstone"],
     correctAnswer: "Great Smoky Mountains",
-    fact: "The most visited national park in the United States sprawls between North Carolina and Tennessee. Over 6.4 million people experienced the wildlife and wildflowers of Great Smoky Mountains in 2009--more than twice the number who visited Grand Canyon, the second most popular park."
+    fact: "Wrong! The most visited national park in the United States sprawls between North Carolina and Tennessee. Over 6.4 million people experienced the wildlife and wildflowers of Great Smoky Mountains in 2009--more than twice the number who visited Grand Canyon, the second most popular park."
   },
   {
     id: 2,
@@ -39,19 +39,19 @@ const questions = [
       "All of the above"
     ],
     correctAnswer: "All of the above",
-    fact: "U.S. national parks are home to the highest point..."
+    fact: "Wrong! U.S. national parks are home to the highest point in North America(Mount McKinley in Denali National Park, Alaska), the longest cave system in the world(the Mammoth Cave system in Mammoth Cave National Park, Kentucky), and the deepest lake in the U.S.(Crater Lake in Oregon's Crater Lake National Park"
   },
   {
     id: 3,
-    question: "What national park is home to the world's largest tree?",
+    question: "What national park is home to the world's largest tree by volume?",
     choices: [
       "Redwood National Park",
       "Sequoia National Park",
       "Everglades National Park",
       "Joshua Tree National Park"
     ],
-    correctAnswer: "Everglades National Park",
-    fact: "Dunno"
+    correctAnswer: "Sequoia National Park",
+    fact: "Wrong! The General Sherman Tree located in California's Sequoia National Park is the largest tree by volume in the world. This massive tree measures a whopping 275 feet tall and 25 feet wide, resulting in a trunk volume of 52,513 cubic feet. It is also one of the oldest trees on the planet with an estimated age of 2,300-2,700 years old."
   },
   {
     id: 4,
@@ -64,14 +64,14 @@ const questions = [
       "Great Basin Park"
     ],
     correctAnswer: "Mammoth Cave National Park",
-    fact: "National park blah..."
+    fact: "Wrong! Mammoth Cave National Park in Kentucky is home to the world's longest known cave system, which measures more than 400 miles long. The park offers a variety of guided cave tours – including a ranger-led nature trek for kids – as well as camping, horseback riding, biking and other activities to explore the beauty of Kentucky's Green River Valley. Courtesy of Travel Channel."
   },
   {
     id: 5,
     question: "What state contains the most national parks?",
     choices: ["Colorado", "Utah", "Alaska", "California"],
     correctAnswer: "California",
-    fact: "The state is DUNNO"
+    fact: "Wrong! With the creation of Pinnacles National Park in 2013, California broke its 8-8 tie with Alaska to become the state with the most national parks. In addition to its nine national parks, California also maintains over 20 National Park System-administered areas including multiple National Monuments, National Historic Trails, National Historic Sites and more."
   },
   {
     id: 6,
@@ -79,7 +79,7 @@ const questions = [
       "Through how many states does the Appalachian National Scenic Trail pass?",
     choices: ["10", "14", "9", "12"],
     correctAnswer: "14",
-    fact: "14 is the right answer because blah"
+    fact: "Wrong! The Appalachian Trail passes through 14 states including Georgia, Tennessee, Virginia, West Virginia, Maryland, Pennsylvania, New Jersey, New York, Connecticut, Massachusetts, Vermont, New Hampshire and Maine."
   },
   {
     id: 7,
@@ -87,7 +87,7 @@ const questions = [
       "Which of the following is not one of Utah's 'Mighty 5' National Parks?",
     choices: ["Arches", "Capitol Reef", "Bryce Canyon", "Badlands"],
     correctAnswer: "Badlands",
-    fact: "BAD BAD BAD"
+    fact: "Wrong! Who's the odd man out? South Dakota's Badlands National Park is NOT a distinguished member of Utah's Mighty 5, a group of adventure-packed recreation areas that includes Canyonlands, Arches, Capitol Reef, Bryce Canyon and Zion National Parks."
   },
   {
     id: 8,
@@ -99,7 +99,7 @@ const questions = [
       "Great Basin National Park"
     ],
     correctAnswer: "Crater Lake National Park",
-    fact: "DEEP"
+    fact: "Wrong! Crater Lake National Park in Southern Oregon is home to, you guessed it, Crater Lake – the deepest lake in the United States. Created about 7,700 years ago when the 12,000-ft-tall Mount Mazama collapsed following a massive eruption, the lake is deep enough to submerge 1.5 Empire State Buildings!"
   },
   {
     id: 9,
@@ -111,7 +111,7 @@ const questions = [
       "Mesa Verde National Park"
     ],
     correctAnswer: ["Hot Springs National Park"],
-    fact: "SMALL"
+    fact: "Wrong! At just 5,549.75 acres, Hot Springs National Park in Arkansas is the smallest national park in America. The largest park, Alaska's Wrangell-St. Elias, is over 2,350 times bigger at 13.2 million acres."
   }
 ];
 
@@ -199,9 +199,9 @@ function userClicked() {
             displayNextQuestion()
         }
         else {
-            alert("game over")
+            // alert("game over")
 
-            results.innerHTML = "Thank you for playing! Here is your final score: " + score 
+            results.innerHTML = "Thank you for playing! Here is your final score out of 10: " + score 
             choiceButtonGroup.style.display = "none";
             playButton.style.display = "none";
             scoreBoard.style.display = "none";
