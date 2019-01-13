@@ -36,15 +36,16 @@ Ability to compete with other player(s)/teams
 Ability to move to different levels 
 
 # Which completed/yet to complete
-I completed part of the bronze requirements: 
+I completed the bronze requirements: 
 HTML with basic CSS
 Questions and choices appear
+Score updates after User answers each question
+Score displays in browser for each question 
+Next question displays when User clicks on any choice button
 
-To complete the bronze plan, I need to:
-Add to score if User selected correct answer
-Show/update score on browser for each question
-Go to next question when User click on any choice button
-
+My next steps to move to Silver plan are: 
+add a timer
+create clean CSS style 
 
 # List of Technologies Used:
 HTML, CSS, JavaScript
