@@ -8,38 +8,39 @@
     <link rel="stylesheet" href="style.css">
     <title>Trivia Game</title>
 </head>
+
 <body>
     <div id="user-state">
-        <h3 id = "score-board"> </h3>
-        <h3 id = "count">  </h3>
+        <h3 id="score-board"> </h3>
+        <h3 id="count"> </h3>
     </div>
     <!-- <div class="hero-image">
         <div class="hero-text"> -->
 
     <h1>National Parks Trivia Game</h1>
-    <img src="images/shenandoah.jpeg" alt = "">
+    <img src="images/shenandoah.jpeg" alt="">
     <div id="game">
-    <p><button onclick id="play"> Test your knowledge! </button></p>
-    <div class = "button-group">
-        <input type= "radio" id= "choice0" name="answer" value="choice0" onclick="userClicked()"/> 
-        <label for="choice0" id= "label0"> a </label>
-        <br> 
-        <input type= "radio" id= "choice1" name="answer" value="choice1" onclick="userClicked()"/>
-        <label for="choice1" id= "label1"> b </label>
-        <br> 
-        <input type= "radio" id= "choice2" name="answer" value="choice2" onclick="userClicked()"/>
-        <label for="choice2" id= "label2"> c </label>
-        <br> 
-        <input type= "radio" id= "choice3" name="answer" value="choice3" onclick="userClicked()"/>
-        <label for="choice3" id= "label3"> d </label>  
-    </div>
-  <div id = "results"> </div>
+        <p><button onclick id="play"> Test your knowledge! </button></p>
+        <div class="button-group">
+            <input type="radio" id="choice0" name="answer" value="choice0" onclick="userClicked()" />
+            <label for="choice0" id="label0"> a </label>
+            <br>
+            <input type="radio" id="choice1" name="answer" value="choice1" onclick="userClicked()" />
+            <label for="choice1" id="label1"> b </label>
+            <br>
+            <input type="radio" id="choice2" name="answer" value="choice2" onclick="userClicked()" />
+            <label for="choice2" id="label2"> c </label>
+            <br>
+            <input type="radio" id="choice3" name="answer" value="choice3" onclick="userClicked()" />
+            <label for="choice3" id="label3"> d </label>
+        </div>
+        <div id="results"> </div>
     </div>
 
     <div class="timer">
         <div id="timeRemaining" class="countdown">
             <!-- <p class="timer"> Time Remaining:  -->
-                <span id="seconds"></span>
+            <span id="seconds"></span>
             </p>
         </div>
     </div>
