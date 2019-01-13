@@ -1,3 +1,5 @@
+//** */01-12-19 9:42PM: need to commit changes: added wrong alert and facts.**
+
 //Game starts when user clicks "test your knowledge" button
 //First Question and Choices Appear
 //User clicks 1 Choice (cannot click more than 1 Choice)
@@ -129,7 +131,6 @@ const questions = [
 //If choice is wrong:
 //If choice button selected is wrong, display next question (DOM)
 
-//*scoreboard, counter and timer should only be displayed for each question... after click "test your knowledge"
 
 const playButton = document.querySelector("button");
 const choiceButtonGroup = document.querySelector(".button-group");
