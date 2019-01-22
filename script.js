@@ -196,7 +196,7 @@ function userClicked() {
         } else {
             // alert("game over")
 
-            results.innerHTML = "Thank you for playing! Here is your final score out of 10: " + score
+            results.innerHTML = "Thank you for playing! You answered" + score + " correctly."
             choiceButtonGroup.style.display = "none";
             playButton.style.display = "none";
             scoreBoard.style.display = "none";
