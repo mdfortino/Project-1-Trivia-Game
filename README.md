@@ -24,28 +24,28 @@ HTML with questions and choices and basic CSS
 Pass HTML and CSS validator
 
 # Silver:
-HTML with timer
-Clean CSS/style 
-2 trivia categories to select from
-Display fact about national park (pop-up) when user selects wrong or correct choice
+* HTML with timer
+* Clean CSS/style 
+* 2 trivia categories to select from
+* Display fact about national park (pop-up) when user selects wrong or correct choice
 
 # Gold:
-HTML with beautiful CSS layout
-Ability to create teams
-Ability to compete with other player(s)/teams
-Ability to move to different levels 
+* HTML with beautiful CSS layout
+* Ability to create teams
+* Ability to compete with other player(s)/teams
+* Ability to move to different levels 
 
 # Which completed/yet to complete
 I completed the bronze requirements: 
-HTML with basic CSS
-Questions and choices appear
-Score updates after User answers each question
-Score displays in browser for each question 
-Next question displays when User clicks on any choice button
+* HTML with basic CSS
+* Questions and choices appear
+* Score updates after User answers each question
+* Score displays in browser for each question 
+* Next question displays when User clicks on any choice button
 
 My next steps to move to Silver plan are: 
-add a timer
-create clean CSS style 
+* add a timer
+* create clean CSS style 
 
 # List of Technologies Used:
 HTML, CSS, JavaScript
@@ -57,5 +57,5 @@ Click the “test your knowledge” button and take the multiple-choice trivia q
 
 # Contribution Guidelines:
 To contribute to the code, identify bugs, and propose improvements, please see the below links: 
-Link to project’s main repository: https://github.com/mdfortino/Project-1-Trivia-Game 
-Link to project’s issue tracker: https://github.com/mdfortino/Project-1-Trivia-Game/issues 
+* Link to project’s main repository: https://github.com/mdfortino/Project-1-Trivia-Game 
+* Link to project’s issue tracker: https://github.com/mdfortino/Project-1-Trivia-Game/issues 
